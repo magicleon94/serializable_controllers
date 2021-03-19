@@ -28,6 +28,27 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final manager = SerializableControllersManager();
+  SerializableTextEditingController nameController;
+  SerializableTextEditingController surnameController;
+  SerializableChangeController checkboxController;
+
+  @override
+  void initState() {
+    nameController = manager.makeController(
+      () => SerializableTextEditingController(id: 'nome'),
+    );
+    surnameController = manager.makeController(
+      () => SerializableTextEditingController(id: 'cognome'),
+    );
+
+    checkboxController = manager.makeController(
+      () => SerializableChangeController(
+        id: 'radio',
+        initialValue: false,
+      ),
+    );
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -37,19 +58,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final nameController = manager.makeController(
-      () => SerializableTextEditingController(id: 'nome'),
-    );
-    final surnameController = manager.makeController(
-      () => SerializableTextEditingController(id: 'cognome'),
-    );
-    final checkboxController = manager.makeController(
-      () => SerializableChangeController(
-        id: 'radio',
-        initialValue: false,
-      ),
-    );
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Serializable controllers'),
@@ -68,18 +76,22 @@ class _HomeState extends State<Home> {
           ),
           ValueListenableBuilder(
             valueListenable: checkboxController,
-            builder: (context, value, _) {
-              print(value);
-              return CheckboxListTile(
-                value: value,
-                onChanged: checkboxController.valueChanged,
-                title: Text('Boolean check'),
-              );
-            },
+            builder: (context, value, _) => CheckboxListTile(
+              value: value,
+              onChanged: checkboxController.valueChanged,
+              title: Text('Boolean check'),
+            ),
           ),
           ElevatedButton(
             onPressed: () {
-              print(jsonEncode(manager.toJson()));
+              final encoder = JsonEncoder.withIndent(' ');
+              final encoded = encoder.convert(manager);
+              return showDialog(
+                context: context,
+                builder: (_) => AlertDialog(
+                  content: Text(encoded),
+                ),
+              );
             },
             child: Text('Submit'),
           )
