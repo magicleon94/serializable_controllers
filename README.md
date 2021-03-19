@@ -80,9 +80,4 @@ Just call
 print(jsonEncode(manager.toJson()));
 ```
 
-## Null safety
-The first version of the package was intentionally published without null safety support in order to provide a compatible version with older projects.
-I'll make another null safe release in the near future in order to support newer projects too!
-
-<hr>
 Check out the example for more!

@@ -37,6 +37,7 @@ class _HomeState extends State<Home> {
     nameController = manager.makeController(
       () => SerializableTextEditingController(id: 'nome'),
     );
+
     surnameController = manager.makeController(
       () => SerializableTextEditingController(id: 'cognome'),
     );

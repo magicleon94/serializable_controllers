@@ -39,8 +39,8 @@ class SerializableTextEditingController extends SerializableController<String> {
   }
 
   SerializableTextEditingController({
-    @required this.id,
-    String initialValue,
+    required this.id,
+    String? initialValue,
   })  : _controller = TextEditingController(
           text: initialValue,
         ),

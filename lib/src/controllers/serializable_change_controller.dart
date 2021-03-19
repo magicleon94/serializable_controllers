@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 import 'serializable_controller.dart';
 
 class SerializableChangeController<T> extends SerializableController<T> {
@@ -21,8 +19,8 @@ class SerializableChangeController<T> extends SerializableController<T> {
   void Function(T) get valueChanged => update;
 
   SerializableChangeController({
-    @required this.id,
-    T initialValue,
+    required this.id,
+    T? initialValue,
   }) : super(initialValue);
 
   @override

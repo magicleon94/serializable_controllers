@@ -1,3 +1,5 @@
+## 1.1.0
+Added null safety support
 ## 1.0.0+2
 Fixed more typos
 ## 1.0.0+1
