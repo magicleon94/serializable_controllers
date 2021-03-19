@@ -1,0 +1,17 @@
+name: serializable_controllers
+description: A simple package to lift some of the boilerplate about values handling when dealing with forms
+version: 1.0.0
+homepage: https://github.com/magicleon94/serializable_controllers
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  pedantic: ^1.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
