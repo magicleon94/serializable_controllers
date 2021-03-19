@@ -18,11 +18,11 @@ The inner `TextEditingController` is avaiable via the `controller` property of t
 
 Example:
 ```dart
-final serializablTextEditingController = manager.makeController(
+final serializableTextEditingController = manager.makeController(
       () => SerializableTextEditingController(id: 'myId'),
     );
 
-final textEditingController = serializablTextEditingController.controller;
+final textEditingController = serializableTextEditingController.controller;
 ```
 
 Instead of using boring listenrs you can directly listen to text changes listening directly to the object:
@@ -81,7 +81,7 @@ print(jsonEncode(manager.toJson()));
 ```
 
 ## Null safety
-The first version of the pacage was intentionally published without null safety support in order to provide a compatible version with older projects.
+The first version of the package was intentionally published without null safety support in order to provide a compatible version with older projects.
 I'll make another null safe release in the near future in order to support newer projects too!
 
 <hr>
