@@ -14,7 +14,7 @@ Remember to use `dispose` on the manager when you're finished to avoid memory le
 
 ### SerializableTextEditingController
 Provides an abstraction for `TextEditingController`.
-The inner `TextEditingController` is avaiable via the `controller` property of the object.
+The inner `TextEditingController` is available via the `controller` property of the object.
 
 Example:
 ```dart
@@ -25,7 +25,7 @@ final serializableTextEditingController = manager.makeController(
 final textEditingController = serializableTextEditingController.controller;
 ```
 
-Instead of using boring listenrs you can directly listen to text changes listening directly to the object:
+Instead of using boring listeners you can directly listen to text changes listening directly to the object:
 
 ```dart
 ValueListenableBuilder(

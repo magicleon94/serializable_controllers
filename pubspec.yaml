@@ -1,6 +1,6 @@
 name: serializable_controllers
 description: A simple package to lift some of the boilerplate about values handling when dealing with forms
-version: 1.0.0+1
+version: 1.0.0+2
 homepage: https://github.com/magicleon94/serializable_controllers
 
 environment:
