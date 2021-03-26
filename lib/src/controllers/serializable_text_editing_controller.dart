@@ -44,5 +44,5 @@ class SerializableTextEditingController extends SerializableController<String> {
   })  : _controller = TextEditingController(
           text: initialValue,
         ),
-        super(initialValue);
+        super(initialValue ?? '');
 }

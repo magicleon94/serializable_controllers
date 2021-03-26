@@ -1,3 +1,5 @@
+## 1.1.1
+Fixed an error in `SerializableTextEditingController` when not supplying an initial value.
 ## 1.1.0
 Added null safety support
 ## 1.0.0+2
