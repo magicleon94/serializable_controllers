@@ -20,6 +20,7 @@ class SerializableControllersManager {
     if (overwrite) {
       removeController(controller.id);
     }
+
     _controllers.putIfAbsent(controller.id, () => controller);
 
     final result = getFromId(controller.id)!;
@@ -30,17 +31,15 @@ class SerializableControllersManager {
   void removeController(String id) {
     final controller = _controllers[id];
     if (controller != null) {
-      _controllers.remove(controller);
+      _controllers.remove(controller.id);
       controller.dispose();
     }
   }
 
   ///Serialize controllers values
-  Map<String, dynamic> toJson([String? rootElementName]) => {
-        rootElementName ?? 'data': [
-          for (final controller in _controllers.values)
-            if (controller != null) controller.toJson()
-        ]
+  Map<String, dynamic> toJson() => {
+        for (final controller in _controllers.values)
+          if (controller != null) controller.id: controller.value
       };
 
   ///Dispose all the stored controllers
