@@ -8,7 +8,8 @@ class SerializableControllersManager {
       List<SerializableController>.from(_controllers.values);
 
   /// Get the controller corresponding to the specified [id]
-  SerializableController? getFromId(String id) => _controllers[id];
+  T? getFromId<T extends SerializableController>(String id) =>
+      _controllers[id] as T;
 
   ///Creates a `SerializableController` using the provided `createFunction`.
   ///If a controller with the same id already exists and [overwrite] is `false`, return that instead of creating a new one.
