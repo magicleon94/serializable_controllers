@@ -24,8 +24,9 @@ class SerializableControllersManager {
 
     _controllers.putIfAbsent(controller.id, () => controller);
 
-    final result = getFromId(controller.id)!;
-    return result as C;
+    final result = getFromId<C>(controller.id)!;
+
+    return result;
   }
 
   ///Removes the controller corresponding to the specified [id]
@@ -42,6 +43,13 @@ class SerializableControllersManager {
         for (final controller in _controllers.values)
           if (controller != null) controller.id: controller.value
       };
+
+  ///Resets all controllers to their initial values
+  void resetControllers() {
+    for (final controller in controllers) {
+      controller.reset();
+    }
+  }
 
   ///Dispose all the stored controllers
   void dispose() {

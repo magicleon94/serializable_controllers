@@ -5,14 +5,9 @@ class SerializableChangeController<T> extends SerializableController<T> {
   final String id;
 
   @override
-  void update(T value) {
+  void update(T? value) {
     this.value = value;
     notifyListeners();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   ///Use this to pass it as a callback to widgets that notify their value change through callbacks

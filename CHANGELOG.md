@@ -1,3 +1,6 @@
+## 1.2.0
+`resetControllers` method added to the manager.
+Improved internals.
 ## 1.1.3
 Type inference enhancements
 ## 1.1.2

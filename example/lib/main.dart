@@ -35,7 +35,8 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     nameController = manager.makeController(
-      () => SerializableTextEditingController(id: 'nome'),
+      () =>
+          SerializableTextEditingController(id: 'nome', initialValue: 'Pippo'),
     );
 
     surnameController = manager.makeController(
@@ -97,6 +98,10 @@ class _HomeState extends State<Home> {
             child: Text('Submit'),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: manager.resetControllers,
+        child: Icon(Icons.restore),
       ),
     );
   }
