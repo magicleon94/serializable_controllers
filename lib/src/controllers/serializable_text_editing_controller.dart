@@ -16,12 +16,12 @@ class SerializableTextEditingController extends SerializableController<String> {
   @override
   set value(String? newValue) {
     _controller.text = newValue ?? '';
+    notifyListeners();
   }
 
   @override
   void update(String? value) {
     this.value = value;
-    notifyListeners();
   }
 
   @override

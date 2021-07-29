@@ -7,7 +7,6 @@ class SerializableChangeController<T> extends SerializableController<T> {
   @override
   void update(T? value) {
     this.value = value;
-    notifyListeners();
   }
 
   ///Use this to pass it as a callback to widgets that notify their value change through callbacks

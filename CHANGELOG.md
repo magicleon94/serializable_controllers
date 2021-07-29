@@ -1,3 +1,5 @@
+## 1.2.1
+Fixed an anomaly which caused listeners to be called twice.
 ## 1.2.0
 `resetControllers` method added to the manager.
 Improved internals.
